@@ -12,6 +12,7 @@ public class reverse{
                 try {
                     //Get the address for the arguments using the InetAddress class
                     InetAddress inetAddress = InetAddress.getByName(address);
+                    //Performs a reverse DNS lookup to get the name for the given IP address
                     String name = inetAddress.getCanonicalHostName();
 
                     //Specify IP address without a name
