@@ -8,20 +8,20 @@ public class reverse{
                 return;
             }
     
-            for (String name : args){
+            for (String address : args){
                 try {
-                    //Get the address for the arguments using the InetAddress class
-                    InetAddress address = InetAddress.getByName(name);
+                    //Get the name for the addresses using the InetAddress class
+                    
+                    
+                    // InetAddress address = InetAddress.getByName(name);
 
-                    //At the moment, the "address" return in the format "www.google.com/172.217.24.36"
-                    //So replace the "/" with a " : " and print it to the output
-                    String addressString = address.toString();
-                    addressString = addressString.replaceAll("[/*]", " : ");
-                    System.out.println(addressString);
+                    // String addressString = address.toString();
+                    // addressString = addressString.replaceAll("[/*]", " : ");
+                    // System.out.println(addressString);
 
                 } catch (Exception e) {
                     //If IPv4 address is NOT found
-                    System.out.println(name + " : unknown host");
+                    System.out.println(address + " : no name");
                 }
             }
         } catch(Exception e){
