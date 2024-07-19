@@ -4,20 +4,25 @@ public class reverse{
     public static void main(String[] args){
         try{
             if(args.length == 0){
-                System.out.println("Usage: resolve <name1> <name2> ... <nameN>");
+                System.out.println("Usage: resolve <address1> <address2> ... <addressN>");
                 return;
             }
     
             for (String address : args){
                 try {
-                    //Get the name for the addresses using the InetAddress class
-                    
-                    
-                    // InetAddress address = InetAddress.getByName(name);
+                    //Get the address for the arguments using the InetAddress class
+                    InetAddress inetAddress = InetAddress.getByName(address);
+                    String name = inetAddress.getCanonicalHostName();
 
-                    // String addressString = address.toString();
-                    // addressString = addressString.replaceAll("[/*]", " : ");
-                    // System.out.println(addressString);
+                    //Specify IP address without a name
+                    //If am address does not match a name
+                    if(name.compareTo(address) == 0){
+                        //Display "no name"
+                        System.out.println(address + " : no name");
+                    } else{
+                        //Display its name
+                        System.out.println(address + " : " + name);
+                    }
 
                 } catch (Exception e) {
                     //If IPv4 address is NOT found
