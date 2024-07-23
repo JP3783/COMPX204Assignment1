@@ -1,4 +1,4 @@
-import java.net.*;
+import java.net.InetAddress;
 
 public class reverse{
     public static void main(String[] args){
