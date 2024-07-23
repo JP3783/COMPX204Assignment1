@@ -4,7 +4,7 @@ import java.net.*;
 public class SimpleServer {
     public static void main(String[] args) throws IOException {
         //Get the port which it is listening to and display to output
-        ServerSocket serverSocket = new ServerSocket();
+        ServerSocket serverSocket = new ServerSocket(0); //Why set to zero?
         System.out.println("Listening on port " + serverSocket.getLocalPort());
 
         
