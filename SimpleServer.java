@@ -12,7 +12,7 @@ public class SimpleServer {
             //Set to 0 so it can choose an available port all the time
             ServerSocket serverSocket = new ServerSocket(0);
             System.out.println("Listening on port " + serverSocket.getLocalPort());
-
+            //While it is true
             while(true){
                 //Accepts a new connection
                 Socket s = serverSocket.accept();

@@ -9,7 +9,6 @@ public class SimpleClient {
             System.out.println("Usage: java SimpleClient <hostname> <address>");
             return;
         }
-
         try {
             //GET the IP address and the port number and store them in variables
             InetAddress ia = InetAddress.getByName(args[0]);
