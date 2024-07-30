@@ -1,3 +1,6 @@
+//Name: Justin Poutoa
+//ID: 1620107
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.InetAddress;

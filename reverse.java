@@ -1,3 +1,6 @@
+//Name: Justin Poutoa
+//ID: 1620107
+
 import java.net.InetAddress;
 
 public class reverse{
