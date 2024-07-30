@@ -17,7 +17,7 @@ public class reverse{
                     String name = inetAddress.getCanonicalHostName();
 
                     //Specify IP address without a name
-                    //If am address does not match a name
+                    //If an address does not match a name
                     if(name.compareTo(address) == 0){
                         //Display "no name"
                         System.out.println(address + " : no name");

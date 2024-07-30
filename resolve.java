@@ -12,8 +12,6 @@ public class resolve{
                 try {
                     //Get the address for the arguments using the InetAddress class
                     InetAddress address = InetAddress.getByName(name);
-                    //Print to the output - formatted nicely
-                    // System.out.println("Test: " + address);
 
                     //At the moment, the "address" return in the format "www.google.com/172.217.24.36"
                     //So replace the "/" with a " : " and print it to the output

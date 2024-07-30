@@ -1,34 +1,39 @@
-import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.*;
 
 public class SimpleServer {
-    public static void main(String[] args) throws IOException {
-        //Get the port which it is listening to and display to output
-        //Set to 0 so it can choose an available port all the time
-        ServerSocket serverSocket = new ServerSocket(0);
-        System.out.println("Listening on port " + serverSocket.getLocalPort());
-
-        while (true) {
-            Socket socket = serverSocket.accept();
-            InetAddress clientAddress = socket.getInetAddress();
-            System.out.println("Client connected from " + clientAddress.getHostAddress() + ":" + socket.getPort());
-
-            //Get client hostname from IP address
-            String clientHostname = clientAddress.getHostName();
-            //Greet the client
-            System.out.println("Hello, " + clientHostname + ".");
-            System.out.println("Your IP address is " + clientAddress.getHostAddress());
-            
-            //Close the connection
-            serverSocket.close();
-        }
-    }
-
     /**
-     * Binds the ServerSocket to a specific address
-     * @param endpoint the IP address and port number to bind to
+     * This is the main method of the program.
+     * @param args these are the arguments passed in from the command line
      */
-    public void bind(SocketAddress endpoint){
-        
+    public static void main(String[] args){
+        try {
+            //Get the port which it is listening to and display to output
+            //Set to 0 so it can choose an available port all the time
+            ServerSocket serverSocket = new ServerSocket(0);
+            System.out.println("Listening on port " + serverSocket.getLocalPort());
+
+            while(true){
+                //Accepts a new connection
+                Socket s = serverSocket.accept();
+
+                //Create stream writer and reader to send/receive over the network
+                PrintWriter writer = new PrintWriter(s.getOutputStream(), true);
+                InetAddress ia = s.getInetAddress();
+
+                //Create string variables to store the hostname and hostaddress
+                String hostname = ia.getHostName();
+                String IPaddress = ia.getHostAddress();
+
+                //Write the output lines
+                writer.println("Hello, " + hostname + ".");
+                writer.println("Your IP address is " + IPaddress);
+
+                //Close the serverSocket
+                serverSocket.close();
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 }
